@@ -1,4 +1,4 @@
-# DeepLearning_Character-Level-Language-Models
+![딥러닝_1](https://github.com/YewonMin/DeepLearning_Character-Level-Language-Models/assets/108216502/02e205eb-8bf0-4e3f-ac78-6509e5e6e637)# DeepLearning_Character-Level-Language-Models
 DeepLearning Course HW3 - Shakespeare NN
 
 ## Folder Structure
@@ -12,10 +12,11 @@ DeepLearning Course HW3 - Shakespeare NN
 
 ## Result (Report)
 #### 0. Plot the average loss values for training and validation
-- RNN (Loss & Accuracy)
-![cmlp_curves](https://github.com/YewonMin/DeepLearning_Classification/assets/108216502/703bffeb-bd4b-48c7-9a33-d4f7492768c8)
-- LSTM (Loss & Accuracy)
-![lenet5_curves](https://github.com/YewonMin/DeepLearning_Classification/assets/108216502/e6e7b53e-8bc7-4746-93c5-5db74d5e4165)
+- RNN (Training Loss & Validation Loss)
+![딥러닝_1](https://github.com/YewonMin/DeepLearning_Character-Level-Language-Models/assets/108216502/d6b40541-402a-4c7e-9f41-e7857b6f1e5a)
+- LSTM (Training Loss & Validation Loss)
+![딥러닝_2](https://github.com/YewonMin/DeepLearning_Character-Level-Language-Models/assets/108216502/a0285c33-2c69-452a-84bd-91b8a70b7935)
+
 
 #### 2. Comparison between RNN and LSTM
 - LeNet-5

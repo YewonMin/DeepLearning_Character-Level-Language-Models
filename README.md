@@ -1,4 +1,4 @@
-DeepLearning Course HW3 - Shakespeare NN
+# DeepLearning Course HW3 - Shakespeare NN
 
 ## Folder Structure
 <<<<<<< HEAD
@@ -20,19 +20,19 @@ DeepLearning Course HW3 - Shakespeare NN
 #### 1. Comparison between RNN and LSTM
 ##### 총 20 epoch에 대한 RNN, LSTM의 전체 train & validation loss 결과
 ![image](https://github.com/YewonMin/DeepLearning_Character-Level-Language-Models/assets/108216502/cedb433e-5d30-4b83-b62a-bd0a1142a8b2)
-* RNN
+RNN
 - Training Loss: 초기 손실값은 1.5398에서 시작하여 1.3926로 감소함.
 - Validation Loss: 초기 손실값은 1.4251에서 시작하여 1.3993로 약간 증가함.
-* LSTM
+LSTM
 - Training Loss: 초기 손실값은 1.5003에서 시작하여 0.9599로 상당히 감소함.
 - Validation Loss: 초기 손실값은 1.3132에서 시작하여 0.985로 감소함.
 
 ##### 비교 분석
-* 훈련 손실(Training Loss):
+훈련 손실(Training Loss):
 - RNN: 훈련 손실값이 전반적으로 줄어들지만, 감소폭이 크지 않음.
 - LSTM: 훈련 손실값이 매우 빠르게 줄어들며, 최종적으로 RNN보다 훨씬 낮은 값을 가짐.
 
-##### 검증 손실(Validation Loss)
+검증 손실(Validation Loss):
 - RNN: 초기에는 감소하지만 이후 다시 증가하는 경향을 보임. 이는 과적합(overfitting)의 징후일 수 있음.
 - LSTM: 지속적으로 감소하는 경향을 보이며, 최종적으로 RNN보다 낮은 손실값을 가짐. 이는 LSTM 모델이 RNN보다 더 일반화(generalization) 능력이 뛰어남을 의미함.
 

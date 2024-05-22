@@ -75,6 +75,10 @@ def main():
     
     rnn_train_losses, rnn_val_losses = [], []
     lstm_train_losses, lstm_val_losses = [], []
+
+    best_val_loss = float('inf')  # Initialize with a very high value
+    best_rnn_model_path = 'best_rnn_model.pth'
+    best_lstm_model_path = 'best_lstm_model.pth'
     
     for epoch in range(epochs):
         rnn_trn_loss = train(rnn_model, trn_loader, device, criterion, rnn_optimizer)
@@ -89,6 +93,16 @@ def main():
         
         print(f"Epoch {epoch+1}/{epochs} RNN - Training Loss: {rnn_trn_loss:.4f}, Validation Loss: {rnn_val_loss:.4f}")
         print(f"Epoch {epoch+1}/{epochs} LSTM - Training Loss: {lstm_trn_loss:.4f}, Validation Loss: {lstm_val_loss:.4f}")
+
+        # Check if the current RNN model is the best so far
+        if rnn_val_loss < best_val_loss:
+            best_val_loss = rnn_val_loss
+            torch.save(rnn_model.state_dict(), best_rnn_model_path)
+        
+        # Check if the current LSTM model is the best so far
+        if lstm_val_loss < best_val_loss:
+            best_val_loss = lstm_val_loss
+            torch.save(lstm_model.state_dict(), best_lstm_model_path)
 
     # Plot RNN Train Loss
     plt.figure()

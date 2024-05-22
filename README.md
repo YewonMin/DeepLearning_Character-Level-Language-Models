@@ -32,23 +32,23 @@
 - RNN: 훈련 손실값이 전반적으로 줄어들지만, 일정 epoch 이후 다시 상승하며 감소폭이 크지 않음.
 - LSTM: 훈련 손실값이 매우 빠르게 줄어들며, 최종적으로 RNN보다 훨씬 낮은 값을 가짐.
 
-##### 검증 손실(Validation Loss):
-- RNN: 초기에는 감소하지만 이후 다시 증가하는 경향을 보임. 이는 과적합(overfitting)의 징후일 수 있음.
-- LSTM: 지속적으로 감소하는 경향을 보이며, 최종적으로 RNN보다 낮은 손실값을 가짐. 이는 LSTM 모델이 RNN보다 더 일반화(generalization) 능력이 뛰어남을 의미함.
+* 검증 손실(Validation Loss):
+** RNN: 초기에는 감소하지만 이후 다시 증가하는 경향을 보임. 이는 과적합(overfitting)의 징후일 수 있음.
+** LSTM: 지속적으로 감소하는 경향을 보이며, 최종적으로 RNN보다 낮은 손실값을 가짐. 이는 LSTM 모델이 RNN보다 더 일반화(generalization) 능력이 뛰어남을 의미함.
 
 #### 1-3. 결론
 * LSTM의 성능이 더 우수함: 검증 손실값이 더 낮고, 훈련 손실값 또한 더 낮음. 이는 LSTM이 RNN에 비해 더 나은 언어 생성 성능을 가짐을 시사함.
 * RNN의 과적합 가능성: 검증 손실값이 감소한 후 다시 증가하는 양상은 훈련 데이터에 과적합되어 새로운 데이터에 대한 성능이 떨어질 수 있음을 나타냄.
 
-## 3. Generate characters with BEST trained model
+## 2. Generate characters with BEST trained model
 BEST trained model: LSTM
-#### 3-1. different seed characters: ['S', 'T', 'O', 'A', 'G']
-#### 3-2. Softmax 함수 with temperature T
+#### 2-1. different seed characters: ['S', 'T', 'O', 'A', 'G']
+#### 2-2. Softmax 함수 with temperature T
 다양한 온도 값(T=0.5, 1.0, 1.5)으로 텍스트를 생성하고, 결과를 분석하여 온도 값이 생성된 텍스트에 미치는 영향 파악
 * T = 1: 기본 설정으로, 모델의 예측 확률 분포를 그대로 사용합니다.
 * T < 1: 분포를 더 날카롭게 만들어, 더 확실한 예측을 하게 합니다. (예: T = 0.5)
 * T > 1: 분포를 부드럽게 만들어, 덜 확실한 예측을 허용합니다. (예: T = 1.5)
-#### 3-3. 결과
+#### 2-3. 결과
 ##### Temperature: 0.5
 ```bash
 Seed Character: S | Generated Text: S:
@@ -159,7 +159,7 @@ Officiaten we haply false your wife of Pomfret him. Althis war mad
 * 결과적으로 텍스트가 더 무작위적으로 보일 수 있습니다.
 
 ##
-#### 3-4. 결론
+#### 2-4. 결론
 * Temperature: 텍스트 생성에서 모델의 샘플링 확률 분포의 스케일을 조절하는 역할 (낮은 temperature: 모델의 예측을 더 확실하게, 높은 temperature: 더 다양하지만 덜 확실한 예측을 만듦) 
 * 결론적으로, 텍스트 생성의 목적에 따라 temperature 값을 선택하는 것이 중요함. 더 일관된 결과를 원한다면 낮은 temperature (ex., 0.5)를 사용하고, 더 창의적이고 다양한 결과를 원한다면 높은 temperature (ex., 1.0 or 1.5)를 사용할 수 있음
 * 따라서, 모델이 생성하는 텍스트의 품질과 다양성 사이에서 적절한 균형을 찾는 것이 중요하다고 판단됨

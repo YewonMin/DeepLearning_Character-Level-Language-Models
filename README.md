@@ -9,7 +9,6 @@
 ├── *generate.py: 가장 좋은 검증 성능을 보이는 모델을 선택하여 학습된 모델로 문자를 생성합니다. 
 ```
 
-## Result (Report)
 ## 0. Plot the average loss values for training and validation
 ##### RNN (Training Loss & Validation Loss)
 ![딥러닝_1](https://github.com/YewonMin/DeepLearning_Character-Level-Language-Models/assets/108216502/8ab9aa10-df33-44d2-a44c-c6f5e24cb224)

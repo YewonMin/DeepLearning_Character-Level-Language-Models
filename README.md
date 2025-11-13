@@ -1,7 +1,8 @@
 # DeepLearning Course - Character-Level Language Models (Shakespeare NN)
-This repository contains implementations of character-level language models trained on the Shakespeare dataset.  
-The goal is to compare two recurrent architectures — Vanilla RNN and LSTM — in their ability to learn long-range dependencies and generate coherent text at the character level.  
-Both models are trained on the same dataset and evaluated based on training/validation loss trends and text generation quality.  
+This repository contains implementations of **character-level language models** trained on the **Shakespeare dataset**.  
+The goal is to compare two recurrent architectures — **Vanilla RNN** and **LSTM** — in their ability to learn long-range dependencies and generate coherent text at the character level.  
+
+Both models are trained on the same dataset and evaluated based on **training/validation loss trends** and text **generation quality**.  
 
 
 ## Folder Structure
@@ -45,16 +46,16 @@ Each model consists of the following layers:
 
 ## Training & Evaluation
 ### Training Loss & Validation Loss
-#### RNN
+* #### RNN
 ![딥러닝_1](https://github.com/YewonMin/DeepLearning_Character-Level-Language-Models/assets/108216502/8ab9aa10-df33-44d2-a44c-c6f5e24cb224)
-* Both training and validation losses reach their lowest values around epoch 6, followed by a slight increase.
-#### LSTM
+Both training and validation losses reach their lowest values around **epoch 6**, followed by a slight increase.
+* #### LSTM
 ![딥러닝_2](https://github.com/YewonMin/DeepLearning_Character-Level-Language-Models/assets/108216502/cd8e44ec-aea2-4a53-aa9a-303de7897576)
-* Both training and validation losses steadily decrease up to epoch 20, showing stable convergence.
+Both training and validation losses steadily decrease up to **epoch 20**, showing stable convergence.
 
 
 ## Comparison: RNN vs. LSTM
-### Overall Loss Trends (20 Epochs)
+#### Overall Loss Trends (20 Epochs)
 ![image](https://github.com/YewonMin/DeepLearning_Character-Level-Language-Models/assets/108216502/4ab95fef-8b51-43dc-b8c4-d4136db63fd8)
 |   **Model**   |  **Training Loss**    |   **Validation Loss**   |   **Observation**   |
 |---------------|-----------------------|-------------------------|---------------------|
@@ -62,25 +63,26 @@ Each model consists of the following layers:
 |   LSTM        |   1.5019 → 0.9555     |   1.3097 → 0.9848       |   Significant and consistent decrease  |
 
 
-### Analysis
+#### Analysis
 * #### Training Loss
   * RNN: Gradually decreases but begins to rise after several epochs — indicates limited capacity to retain long-term dependencies.
   * LSTM: Decreases sharply and remains low, demonstrating more stable learning.
 
 * #### Validation Loss
-  * RNN: Initially drops but later increases, suggesting overfitting.
-  * LSTM: Continues to decline, indicating better generalization.
+  * RNN: Initially drops but later increases, suggesting **overfitting**.
+  * LSTM: Continues to decline, indicating **better generalization**.
 
-### Conclusion
-- LSTM outperforms RNN — lower training and validation losses imply stronger language modeling and generalization capability.
-- RNN shows possible overfitting, as validation performance plateaus and slightly worsens after early epochs.
+#### Conclusion
+- **LSTM outperforms RNN** — lower training and validation losses imply stronger language modeling and generalization capability.
+- **RNN shows possible overfitting**, as validation performance plateaus and slightly worsens after early epochs.
 
 
 ## Text Generation with the Best Model
-* ### BEST trained model: LSTM
-* ### Seed characters: `['S', 'T', 'O', 'A', 'G']`
-* ### Sampling Method: Softmax with temperature scaling (`T = 0.5`, `1.0`, `1.5`)
+* #### BEST trained model: LSTM
+* #### Seed characters: `['S', 'T', 'O', 'A', 'G']`
+* #### Sampling Method: Softmax with temperature scaling (`T = 0.5`, `1.0`, `1.5`)
 
+##
 #### Temperature Effects in Text Generation
 Temperature (`T`) controls the randomness of sampling from the model’s probability distribution:
 * T < 1: Sharper distribution → more deterministic, repetitive text

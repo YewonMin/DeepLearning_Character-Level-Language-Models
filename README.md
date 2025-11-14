@@ -7,11 +7,12 @@ Both models are trained on the same dataset and evaluated based on **training/va
 
 ## Folder Structure
 ```bash
+DeepLearning_Character-Level-Language-Models/
 ├── dataset.py              # Loads and preprocesses the Shakespeare dataset
 ├── generate.py             # Generates characters from the best-performing trained model 
 ├── main.py                 # Trains and evaluates the models; plots train/validation loss
 ├── model.py                # Defines Vanilla RNN and LSTM models
-├── shakespeare_train.txt   # Dataset: Shakespeare’s text corpus
+└── shakespeare_train.txt   # Dataset: Shakespeare’s text corpus
 ```
 
 ## Dataset and Input Processing

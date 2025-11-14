@@ -78,9 +78,9 @@ Both training and validation losses steadily decrease up to **epoch 20**, showin
 
 
 ## Text Generation with the Best Model
-* #### BEST trained model: LSTM
-* #### Seed characters: `['S', 'T', 'O', 'A', 'G']`
-* #### Sampling Method: Softmax with temperature scaling (`T = 0.5`, `1.0`, `1.5`)
+* ##### BEST trained model: LSTM
+* ##### Seed characters: `['S', 'T', 'O', 'A', 'G']`
+* ##### Sampling Method: Softmax with temperature scaling (`T = 0.5`, `1.0`, `1.5`)
 
 ##
 #### Temperature Effects in Text Generation
